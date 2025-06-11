@@ -1,4 +1,3 @@
-// FRONTEND: src/App.jsx
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
@@ -37,7 +36,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>CRUD Pro Fi Ss Io Na L</h1>
+      <h1 className='containerTitle'>CRUD</h1>
 
       <div className="form">
         <input name="id" placeholder="ID" value={form.id} onChange={handleChange} />
@@ -45,14 +44,14 @@ function App() {
       </div>
 
       <div className="buttons">
-        <button onClick={criarItem}>Criar</button>
-        <button onClick={deletarItem}>Excluir</button>
+        <button id="addButton" onClick={criarItem}>Criar</button>
+        <button id="excluirButton" onClick={deletarItem}>Excluir</button>
       </div>
 
-      <ul>
+      <ul className='listContainer'>
         {items.map((item) => (
           <li key={item.id}>
-            ID {item.id}: {item.text}
+            <span className='idList'>ID {item.id}</span>: {item.text}
           </li>
         ))}
       </ul>
